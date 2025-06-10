@@ -1,5 +1,4 @@
 import React, {useEffect, useState } from "react";
-import { API_KEY } from "../config";
 import axios from "axios";
 import ErrorBox from "./ErrorBox";
 import { FaSnowflake,FaCloudRain,FaCloudSun, FaUserCircle, FaHome, FaCalendarAlt, FaInfoCircle, FaBars } from "react-icons/fa";
@@ -17,7 +16,7 @@ const Dashboard = () => {
  const [forecastData, setForecastData] = useState([]);
  const [userName, setUserName] = useState("");
 const [greeting, setGreeting] = useState("");
-
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 const getGreeting = () => {
   const hour = new Date().getHours();
